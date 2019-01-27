@@ -10,8 +10,8 @@
 <div id="app">
 	<button v-on:click="counter++">Increase</button>
 	<button v-on:click="counter--">Decrease</button>
-	<button v-on:click="output()">Decrease</button>
-	<p>Counter: {{ counter }}</p>
+	<button v-on:click="secondCounter++">Increase Second</button>
+	<p>Counter: {{ counter }} | {{ secondCounter }}</p>
 	<p>Result: {{ result() }} | {{ output }} </p>
 </div>
 
@@ -26,6 +26,14 @@ new Vue ({
 	computed: {
 		output: function() {
 			return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
+		}
+	},
+	watch: {
+		counter: function(value) {
+			var vm = this;
+			setTimeout(function(){
+				vm.counter = 0;
+			}, 2000);
 		}
 	},
 	methods: {
