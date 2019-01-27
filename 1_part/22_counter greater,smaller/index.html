@@ -9,7 +9,7 @@
 
 <div id="app">
 	<button v-on:click="increase">Increase</button>
-	<button v-on:click="descrease">Descrease</button>
+	<button v-on:click="decrease">Decrease</button>
 	<p>Counter: {{ counter }}</p>
 	<p>Result: {{ result }} </p>
 </div>
@@ -27,10 +27,10 @@ new Vue ({
 			this.counter++;
 			this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
 		},
-		descrease: function() {
+		decrease: function() {
 			this.counter--;
 			this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
-		}
+		},
 	}
 });
 </script>
